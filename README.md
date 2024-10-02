@@ -34,10 +34,30 @@ extractUrlPreview(url)
 
 ```json
 {
-  "title": "Example Site",
-  "description": "This is an example description for the website.",
-  "image": "https://example.com/example-image.jpg",
-  "url": "https://example.com"
+  "url": "https://www.youtube.com/watch?v=ofc_jAxW6Hs",
+  "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
+  "description": "Thank you for your support you can join us from the below links.Please ...",
+  "domain": "youtu.be",
+  "image": "https://i.ytimg.com/vi/ofc_jAxW6Hs/maxresdefault.jpg",
+  "base64Image": "< BAS64 IMAGE STRING >",
+  "metaTags": {
+    "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
+    "description": "Thank you for your support you can join us from the below links.Please ...",
+    "url": ""
+  },
+  "ogTags": {
+    "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
+    "description": "Thank you for your support you can join us from the below links.Please ...",
+    "site_name": "YouTube",
+    "url": "https://www.youtube.com/watch?v=ofc_jAxW6Hs",
+    "image": "https://i.ytimg.com/vi/ofc_jAxW6Hs/maxresdefault.jpg"
+  },
+  "twitterTags": {
+    "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
+    "description": "Thank you for your support you can join us from the below links.Please ...",
+    "card": "player",
+    "image": "https://i.ytimg.com/vi/ofc_jAxW6Hs/maxresdefault.jpg"
+  },
 }
 ```
 
