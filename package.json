@@ -1,7 +1,7 @@
 {
-  "name": "url-preview-extractor",
+  "name": "link-preview-extractor",
   "version": "1.0.2",
-  "description": "url-preview-extractor is a lightweight package that extracts metadata (title, description, images) from URLs, supporting Open Graph and Twitter Cards for generating rich link previews.",
+  "description": "link-preview-extractor is a lightweight package that extracts metadata (title, description, images) from URLs, supporting Open Graph and Twitter Cards for generating rich link previews.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,7 @@
   },
   "keywords": [
     "url",
+    "link",
     "preview",
     "generator",
     "extractor",
