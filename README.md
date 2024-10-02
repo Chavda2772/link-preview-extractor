@@ -1,6 +1,6 @@
-# url-preview-extractor
+# link-preview-extractor
 
-**url-preview-extractor** is a simple and lightweight Node.js package designed to extract essential metadata from a given URL, such as the title, description, images, and more. It's perfect for applications that need to generate link previews like social media platforms, chat apps, and content-sharing sites.
+**link-preview-extractor** is a simple and lightweight Node.js package designed to extract essential metadata from a given URL, such as the title, description, images, and more. It's perfect for applications that need to generate link previews like social media platforms, chat apps, and content-sharing sites.
 
 ## Features
 - Extracts title, description, images, and more from URLs.
@@ -12,17 +12,17 @@
 ## Installation
 
 ```bash
-npm install url-preview-extractor
+npm install link-preview-extractor
 ```
 
 ## Usage
 
 ```javascript
-const extractUrlPreview = require('url-preview-extractor');
+const extractLinkPreview = require('link-preview-extractor');
 
 const url = 'https://example.com';
 
-extractUrlPreview(url)
+extractLinkPreview(url)
   .then((metadata) => {
     console.log(metadata);
     // Output: { title: 'Example', description: 'An example site', image: 'https://example.com/image.png' }
@@ -57,7 +57,7 @@ extractUrlPreview(url)
     "description": "Thank you for your support you can join us from the below links.Please ...",
     "card": "player",
     "image": "https://i.ytimg.com/vi/ofc_jAxW6Hs/maxresdefault.jpg"
-  },
+  }
 }
 ```
 
