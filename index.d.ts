@@ -33,8 +33,8 @@ declare interface UrlPreviewResult {
 
 declare function url_preview_extractor(
     uri: string,
-    imageAsBase64?: boolean = false,
-    extraDetails?: boolean = false,
+    imageAsBase64?: boolean,
+    extraDetails?: boolean,
 ): Promise<UrlPreviewResult>;
 
 export = url_preview_extractor;
