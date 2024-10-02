@@ -63,7 +63,6 @@ module.exports = async (url, imageAsBase64 = false, extraDetails = false) => {
         'title': metadata.metaTags?.title || metadata.ogTags?.title || metadata.twitterTags?.title,
         'description': metadata.metaTags?.description || metadata.ogTags?.description || metadata.twitterTags?.description,
         'image': metadata.ogTags?.image || metadata.twitterTags?.image,
-        'imgBase64String': ''
     };
 
     // Return base64 string of image

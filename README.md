@@ -1,21 +1,29 @@
+Here’s the modified README file based on your request:
+
+---
+
 # link-preview-extractor
 
-**link-preview-extractor** is a simple and lightweight Node.js package designed to extract essential metadata from a given URL, such as the title, description, images, and more. It's perfect for applications that need to generate link previews like social media platforms, chat apps, and content-sharing sites.
+**link-preview-extractor** is a lightweight Node.js package that extracts metadata from URLs, including title, description, images, and Open Graph/Twitter Card tags. It's ideal for generating rich previews for links, commonly used in social media, chat apps, and content-sharing platforms.
 
 ## Features
-- Extracts title, description, images, and more from URLs.
+- Extracts metadata including title, description, and images from URLs.
 - Supports Open Graph (OG) and Twitter Card metadata.
-- Easy-to-use API with minimal setup.
-- Works with a wide range of websites.
-- Lightweight and efficient for quick metadata extraction.
+- Optionally returns images as base64 strings.
+- Simple to use with a clean API.
+- Option to return additional metadata details if needed.
 
 ## Installation
+
+Install the package using npm:
 
 ```bash
 npm install link-preview-extractor
 ```
 
 ## Usage
+
+### Basic Usage
 
 ```javascript
 const extractLinkPreview = require('link-preview-extractor');
@@ -25,38 +33,91 @@ const url = 'https://example.com';
 extractLinkPreview(url)
   .then((metadata) => {
     console.log(metadata);
-    // Output: { title: 'Example', description: 'An example site', image: 'https://example.com/image.png' }
+    // Output: { url, domain, title, description, image }
   })
   .catch((err) => console.error(err));
 ```
 
-## Output Example
+### Example Output
 
 ```json
 {
-  "url": "https://www.youtube.com/watch?v=ofc_jAxW6Hs",
-  "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
-  "description": "Thank you for your support you can join us from the below links.Please ...",
-  "domain": "youtu.be",
-  "image": "https://i.ytimg.com/vi/ofc_jAxW6Hs/maxresdefault.jpg",
-  "base64Image": "< BAS64 IMAGE STRING >",
+  "url": "https://example.com",
+  "domain": "example.com",
+  "title": "Example Site",
+  "description": "This is an example description.",
+  "image": "https://example.com/image.jpg"
+}
+```
+
+## Advanced Usage
+
+### 1. `imageAsBase64` (Set to `true`)
+
+You can request the image as a base64 string by setting the `imageAsBase64` parameter to `true`. This is useful if you want to embed images directly into your app without making additional requests.
+
+```javascript
+extractLinkPreview(url, true)
+  .then((metadata) => {
+    console.log(metadata);
+    // Output includes image as a base64 string
+  })
+  .catch((err) => console.error(err));
+```
+
+#### Example Output (with `imageAsBase64: true`):
+
+```json
+{
+  "url": "https://example.com",
+  "domain": "example.com",
+  "title": "Example Site",
+  "description": "This is an example description.",
+  "image": "https://example.com/image.jpg",
+  "imgBase64String": "<BASE64 IMAGE STRING>"
+}
+```
+
+### 2. `extraDetails` (Set to `true`)
+
+When you set the `extraDetails` parameter to `true`, additional metadata including `metaTags`, `ogTags`, and `twitterTags` is returned in the response.
+
+```javascript
+extractLinkPreview(url, false, true)
+  .then((metadata) => {
+    console.log(metadata);
+    // Output includes extra metadata details like metaTags, ogTags, and twitterTags
+  })
+  .catch((err) => console.error(err));
+```
+
+#### Example Output (with `extraDetails: true`):
+
+```json
+{
+  "url": "https://example.com",
+  "domain": "example.com",
+  "title": "Example Site",
+  "description": "This is an example description.",
+  "image": "https://example.com/image.jpg",
+  "imgBase64String": "",
   "metaTags": {
-    "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
-    "description": "Thank you for your support you can join us from the below links.Please ...",
-    "url": ""
+    "title": "Example Meta Title",
+    "description": "This is an example meta description.",
+    "url": "https://example.com"
   },
   "ogTags": {
-    "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
-    "description": "Thank you for your support you can join us from the below links.Please ...",
-    "site_name": "YouTube",
-    "url": "https://www.youtube.com/watch?v=ofc_jAxW6Hs",
-    "image": "https://i.ytimg.com/vi/ofc_jAxW6Hs/maxresdefault.jpg"
+    "title": "Example OG Title",
+    "description": "This is an example OG description.",
+    "site_name": "Example Site",
+    "url": "https://example.com",
+    "image": "https://example.com/og-image.jpg"
   },
   "twitterTags": {
-    "title": "How to Upload Your Local Website to cPanel Hosting Server || Visualize Code",
-    "description": "Thank you for your support you can join us from the below links.Please ...",
-    "card": "player",
-    "image": "https://i.ytimg.com/vi/ofc_jAxW6Hs/maxresdefault.jpg"
+    "title": "Example Twitter Title",
+    "description": "This is an example Twitter description.",
+    "card": "summary_large_image",
+    "image": "https://example.com/twitter-image.jpg"
   }
 }
 ```
