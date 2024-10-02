@@ -1,20 +1,28 @@
 {
-  "name": "link-preview-extractor",
-  "version": "1.0.1",
-  "description": "link-preview-extractor is a lightweight package that extracts metadata (title, description, images) from URLs, supporting Open Graph and Twitter Cards for generating rich link previews.",
+  "name": "url-preview-extractor",
+  "version": "1.0.2",
+  "description": "url-preview-extractor is a lightweight package that extracts metadata (title, description, images) from URLs, supporting Open Graph and Twitter Cards for generating rich link previews.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chavda2772/link-preview-extractor.git"
+  },
   "keywords": [
-    "link",
+    "url",
     "preview",
     "generator",
     "extractor",
     "metadata"
   ],
-  "author": "chavdamahesh2772@gmail.com",
+  "author": "Mahesh Chavda <chavdamahesh2772@gmail.com> (https://chavdamahesh.com/)",
   "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Chavda2772/link-preview-extractor/issues"
+    },
+    "homepage": "tps://github.com/Chavda2772/link-preview-extractor#readme",
   "dependencies": {
     "axios": "^1.7.7",
     "cheerio": "^1.0.0"
