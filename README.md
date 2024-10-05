@@ -1,7 +1,3 @@
-Here’s the modified README file based on your request:
-
----
-
 # link-preview-extractor
 
 **link-preview-extractor** is a lightweight Node.js package that extracts metadata from URLs, including title, description, images, and Open Graph/Twitter Card tags. It's ideal for generating rich previews for links, commonly used in social media, chat apps, and content-sharing platforms.
